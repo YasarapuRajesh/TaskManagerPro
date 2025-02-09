@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Your Tasks</h1>
+    <!-- tasks.html -->
+    <table>
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Created At</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for task in tasks %}
+          <tr>
+              <td>{{ task.name }}</td>
+              <td>{{ task.desc }}</td>
+              <td>{{ task.status }}</td>
+              <td>{{ task.created_at }}</td>  <!-- Displaying created_at -->
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="/add_task">Add Task</a>
+</body>
+</html>
